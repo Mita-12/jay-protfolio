@@ -12,9 +12,9 @@ const ContactFooter = () => {
 
                     {/* Heading */}
                     <div className="text-center mb-12">
-                        <p className="text-blue-500 font-semibold">GET IN TOUCH</p>
+                        <p className="text-[#1e8acb] font-semibold">GET IN TOUCH</p>
                         <h2 className="text-4xl font-bold text-gray-800 mt-2">
-                            Let's <span className="text-blue-600">Connect</span>
+                            Let's <span className="text-[#1e8acb]">Connect</span>
                         </h2>
                         <p className="text-gray-500 mt-3">
                             Have a project in mind? Let's discuss how I can help grow your digital presence.
@@ -28,7 +28,7 @@ const ContactFooter = () => {
 
                             {/* Email Card */}
                             <div className="bg-white p-5 rounded-xl shadow-sm flex gap-4 items-center">
-                                <div className="bg-blue-100 p-3 rounded-lg text-blue-600 text-xl">
+                                <div className="bg-blue-100 p-3 rounded-lg text-[#1e8acb] text-xl">
                                     <FaEnvelope />
                                 </div>
                                 <div>
@@ -39,7 +39,7 @@ const ContactFooter = () => {
 
                             {/* Location Card */}
                             <div className="bg-white p-5 rounded-xl shadow-sm flex gap-4 items-center">
-                                <div className="bg-blue-100 p-3 rounded-lg text-blue-600 text-xl">
+                                <div className="bg-blue-100 p-3 rounded-lg text-[#1e8acb] text-xl">
                                     <FaMapMarkerAlt />
                                 </div>
                                 <div>
@@ -91,7 +91,7 @@ const ContactFooter = () => {
                                     className="border p-3 rounded-lg border-blue-100 bg-gray-400 w-full focus:outline-blue-400"
                                 ></textarea>
 
-                                <button className="w-full bg-blue-600 text-white py-3 rounded-full flex items-center justify-center gap-2 hover:bg-blue-700 transition">
+                                <button className="w-full bg-[#1e8acb] text-white py-3 rounded-full flex items-center justify-center gap-2 hover:bg-blue-700 transition">
                                     <FaPaperPlane /> Send Message
                                 </button>
 

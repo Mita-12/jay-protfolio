@@ -25,17 +25,14 @@ const Skills = () => {
     return (
         <section className="relative bg-[#eaf3f9] py-20 px-6 md:px-20">
 
-            {/* TOP WAVE */}
-            {/* <div className="absolute top-0 left-0 w-full h-20 bg-[#cfe2ef] rounded-b-[100px]"></div> */}
-
             {/* TITLE */}
             <div className="text-center mb-16 relative z-10">
-                <p className="text-blue-600 text-sm font-semibold mb-2">
+                <p className="text-[#1e8acb] text-sm font-semibold mb-2">
                     WHAT I DO BEST
                 </p>
 
                 <h2 className="text-4xl font-bold text-gray-900">
-                    Skills & <span className="text-blue-600">Expertise</span>
+                    Skills & <span className="text-[#1e8acb]">Expertise</span>
                 </h2>
 
                 <p className="text-gray-600 mt-4 max-w-xl mx-auto">
@@ -50,12 +47,11 @@ const Skills = () => {
                 {skills.map((skill, index) => (
                     <div
                         key={index}
-                        className="bg-white p-6 rounded-xl shadow-sm border hover:shadow-md transition border-blue-100"
+                        className="bg-white p-6 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow duration-300"
                     >
                         <div className="flex justify-between items-center mb-4">
-
                             <div className="flex items-center gap-3">
-                                <div className="bg-blue-100 text-blue-600 p-3 rounded-lg">
+                                <div className="bg-blue-100 text-[#1e8acb] p-3 rounded-lg">
                                     {skill.icon}
                                 </div>
                                 <h3 className="font-semibold text-gray-800">
@@ -63,7 +59,7 @@ const Skills = () => {
                                 </h3>
                             </div>
 
-                            <span className="text-blue-600 font-semibold">
+                            <span className="text-[#1e8acb] font-semibold">
                                 {skill.percent}%
                             </span>
                         </div>
@@ -71,7 +67,7 @@ const Skills = () => {
                         {/* PROGRESS BAR */}
                         <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                             <div
-                                className="h-full bg-gradient-to-r from-blue-600 to-blue-300"
+                                className="h-full bg-gradient-to-r from-[#1e8acb] to-blue-300"
                                 style={{ width: `${skill.percent}%` }}
                             ></div>
                         </div>
@@ -79,9 +75,6 @@ const Skills = () => {
                 ))}
 
             </div>
-
-            {/* BOTTOM WAVE */}
-            {/* <div className="absolute bottom-0 left-0 w-full h-20 bg-[#cfe2ef] rounded-t-[100px]"></div> */}
 
         </section>
     );
