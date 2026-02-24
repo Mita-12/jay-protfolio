@@ -17,86 +17,75 @@ const services = [
     {
         icon: <FaSearch />,
         title: "SEO Optimization & Technical Audits",
-        desc: "Our team of experts will conduct a comprehensive audit of your website using industry-leading tools like Screaming Frog, Ahrefs, SEMrush, and Moz. We'll analyze technical SEO factors, identify crawl errors, and provide actionable recommendations to boost your rankings. We utilize Google Search Console for performance monitoring and Google Analytics for traffic analysis.",
+        desc: "In-depth site audits covering crawl errors, page speed, mobile usability, and indexation issues to ensure search engines can discover and rank your pages effectively",
         tools: [
             { name: "Screaming Frog", image: "/tools/screamingfrog.png" },
             { name: "Ahrefs", image: "/tools/ahrefs.png" },
-            { name: "SEMrush", image: "/tools/semrush.png" },
-            { name: "Moz", image: "/tools/moz.png" },
-            { name: "Google Search Console", image: "/tools/googlesearchconsole.png" },
-            { name: "Google Analytics", image: "/tools/google.png" },
-        ]
+            { name: "Google Search Console", image: "/tools/googlesearchconsole.png" },]
     },
     {
         icon: <FaPenNib />,
         title: "Keyword Research & Content Strategy",
-        desc: "We'll analyze your keywords and content strategy using advanced tools like Ahrefs, SEMrush, Google Trends, and Moz. Our research focuses on search intent, keyword difficulty, and content gaps. We leverage ChatGPT, Gemini AI, and Meta AI for content ideation, while using Notion and Microsoft 365 for content planning and collaboration.",
+        desc: "Uncover high-intent keywords, analyze competitor gaps, and build a content roadmap that attracts the right audience and converts visitors into customers",
         tools: [
             { name: "Ahrefs", image: "/tools/ahrefs.png" },
             { name: "SEMrush", image: "/tools/semrush.png" },
             { name: "Google Trends", image: "/tools/google.png" },
-            { name: "Moz", image: "/tools/moz.png" },
-            { name: "ChatGPT", image: "/tools/chatgpt.png" },
-            { name: "Gemini AI", image: "/tools/gemini.png" },
-            { name: "Meta AI", image: "/tools/meta-ai.png" },
-            { name: "Notion", image: "/tools/notion.png" },
-            { name: "Microsoft 365", image: "/tools/microsoft.png" },
         ]
     },
     {
         icon: <FaChartLine />,
         title: "On-Page & Off-Page SEO",
-        desc: "Optimize your site's on-page elements using tools like Screaming Frog and Ahrefs for title tags, meta descriptions, and keyword density analysis. For off-page optimization, we utilize Ahrefs and Moz for backlink analysis and link building strategies. Performance tracking is done through Google Analytics and Google Search Console.",
+        desc: "From meta tags and schema markup to strategic link building and digital PR — a full-spectrum approach to strengthen your search presence and domain authority",
         tools: [
-            { name: "Screaming Frog", image: "/tools/screamingfrog.png" },
             { name: "Ahrefs", image: "/tools/ahrefs.png" },
             { name: "Moz", image: "/tools/moz.png" },
-            { name: "Google Analytics", image: "/tools/google.png" },
             { name: "Google Search Console", image: "/tools/googlesearchconsole.png" },
-            { name: "SEMrush", image: "/tools/semrush.png" },
         ]
     },
     {
         icon: <FaShareAlt />,
         title: "Social Media Optimization (SMO)",
-        desc: "Increase your brand's visibility on social media platforms by creating engaging content and participating in relevant communities. We use Buffer and Hootsuite for social media scheduling and management, while Canva and Adobe Creative Cloud help create stunning visuals. Performance tracking and engagement monitoring are done through native analytics and these powerful tools.",
+        desc: "Craft platform-specific strategies for Instagram, LinkedIn, Facebook & X to grow your community, boost engagement, and drive meaningful referral traffic",
         tools: [
             { name: "Buffer", image: "/tools/buffer.png" },
             { name: "Hootsuite", image: "/tools/hootsuite.png" },
-            { name: "Canva", image: "/tools/canva.png" },
-            { name: "Adobe Creative Cloud", image: "/tools/adobe.png" },
-            { name: "Meta Business Suite", image: "/tools/meta.png" },
-            { name: "Google Analytics", image: "/tools/google.png" },
+            { name: "Meta ", image: "/tools/meta.png" },
         ]
     },
     {
         icon: <FaBullhorn />,
         title: "Content Strategy & Growth Planning",
-        desc: "Develop a comprehensive content strategy that aligns with your audience and business objectives. We use Notion and Microsoft 365 for content calendar management and team collaboration. AI tools like ChatGPT, Gemini AI, and Meta AI assist in content creation and optimization. For audio content, we leverage Eleven Labs for realistic voiceovers and audio production. Visual content is enhanced with Canva and Adobe Creative Cloud.",
+        desc: "Build editorial calendars, pillar-cluster content models, and distribution plans that align with your brand goals and fuel long-term organic growth",
         tools: [
             { name: "Notion", image: "/tools/notion.png" },
-            { name: "Microsoft 365", image: "/tools/microsoft.png" },
-            { name: "ChatGPT", image: "/tools/openai.png" },
-            { name: "Gemini AI", image: "/tools/googlegemini.png" },
-            { name: "Meta AI", image: "/tools/meta.png" },
-            { name: "Eleven Labs", image: "/tools/elevenlabs.png" },
-            { name: "Canva", image: "/tools/canva.png" },
-            { name: "Adobe Creative Cloud", image: "/tools/adobe.png" },
+
             { name: "Google Trends", image: "/tools/googleanalytics.png" },
         ]
     },
     {
         icon: <FaClipboardCheck />,
         title: "Performance Tracking & Reporting",
-        desc: "Monitor key performance indicators (KPIs) to track your progress and make data-driven decisions. We utilize Google Analytics, Google Search Console, Ahrefs, and SEMrush for comprehensive performance tracking. Social media performance is monitored through Buffer and Hootsuite analytics. Custom reports are created using these tools to provide actionable insights and help you stay on top of your game.",
+        desc: "Set up dashboards, track KPIs, and deliver clear monthly reports with actionable recommendations to continuously improve your digital marketing ROI",
         tools: [
             { name: "Google Analytics", image: "/tools/google.png" },
             { name: "Google Search Console", image: "/tools/googlesearchconsole.png" },
-            { name: "Ahrefs", image: "/tools/ahrefs.png" },
-            { name: "SEMrush", image: "/tools/semrush.png" },
-            { name: "Moz", image: "/tools/moz.png" },
-            { name: "Buffer Analytics", image: "/tools/buffer.png" },
-            { name: "Hootsuite Analytics", image: "/tools/hootsuite.png" },
+            { name: "Microsoft 365", image: "/tools/microsoft.png" },
+
+        ]
+    },
+    {
+        icon: <FaClipboardCheck />,
+        title: "Tools & Technologies",
+        desc: "Leveraging cutting-edge AI and creative platforms to deliver exceptional results",
+        tools: [
+            { name: "ChatGPT", image: "/tools/openai.png" },
+            { name: "Gemini AI", image: "/tools/googlegemini.png" },
+            { name: "Meta AI", image: "/tools/meta.png" },
+            { name: "Eleven Labs", image: "/tools/elevenlabs.png" },
+            { name: "Canva", image: "/tools/canva.png" },
+            { name: "Adobe Creative Cloud", image: "/tools/adobe.png" },
+
         ]
     },
 ];
@@ -201,13 +190,13 @@ const ServicesPortfolio = () => {
                                 <p className="text-xs text-gray-400 mb-2 text-left">Tools We Use:</p>
                                 <div className="flex flex-wrap gap-2">
                                     {item.tools.map((tool, toolIndex) => (
-                                        <span 
-                                            key={toolIndex} 
+                                        <span
+                                            key={toolIndex}
                                             className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-700 px-3 py-3 rounded-full border border-gray-200 hover:border-[#1e8acb] hover:bg-blue-50 transition-colors duration-200"
                                             title={tool.name}
                                         >
-                                            <img 
-                                                src={tool.image} 
+                                            <img
+                                                src={tool.image}
                                                 alt={tool.name}
                                                 className="w-6 h-6 object-contain"
                                                 onError={(e) => {
@@ -254,11 +243,10 @@ const ServicesPortfolio = () => {
                             <button
                                 key={key}
                                 onClick={() => setActiveTab(key)}
-                                className={`px-8 py-3 rounded-full text-sm font-medium flex items-center gap-2 transition-all duration-300 ${
-                                    activeTab === key
-                                        ? "bg-[#1e8acb] text-white shadow-lg"
-                                        : "bg-white border border-gray-200 text-gray-600 hover:border-blue-300"
-                                }`}
+                                className={`px-8 py-3 rounded-full text-sm font-medium flex items-center gap-2 transition-all duration-300 ${activeTab === key
+                                    ? "bg-[#1e8acb] text-white shadow-lg"
+                                    : "bg-white border border-gray-200 text-gray-600 hover:border-blue-300"
+                                    }`}
                             >
                                 <span className={activeTab === key ? "text-white" : `text-${portfolioData[key].color}-500`}>
                                     {portfolioData[key].icon}
