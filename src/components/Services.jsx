@@ -21,7 +21,8 @@ const services = [
         tools: [
             { name: "Screaming Frog", image: "/tools/screamingfrog.png" },
             { name: "Ahrefs", image: "/tools/ahrefs.png" },
-            { name: "Google Search Console", image: "/tools/googlesearchconsole.png" },]
+            { name: "Google Search Console", image: "/tools/googlesearchconsole.png" },
+        ]
     },
     {
         icon: <FaPenNib />,
@@ -59,7 +60,6 @@ const services = [
         desc: "Build editorial calendars, pillar-cluster content models, and distribution plans that align with your brand goals and fuel long-term organic growth",
         tools: [
             { name: "Notion", image: "/tools/notion.png" },
-
             { name: "Google Trends", image: "/tools/googleanalytics.png" },
         ]
     },
@@ -71,7 +71,6 @@ const services = [
             { name: "Google Analytics", image: "/tools/google.png" },
             { name: "Google Search Console", image: "/tools/googlesearchconsole.png" },
             { name: "Microsoft 365", image: "/tools/microsoft.png" },
-
         ]
     },
     {
@@ -85,7 +84,6 @@ const services = [
             { name: "Eleven Labs", image: "/tools/elevenlabs.png" },
             { name: "Canva", image: "/tools/canva.png" },
             { name: "Adobe Creative Cloud", image: "/tools/adobe.png" },
-
         ]
     },
 ];
@@ -93,7 +91,7 @@ const services = [
 const portfolioData = {
     auditfiling: {
         title: "AuditFiling Website SEO & SMO",
-        icon: <FaGlobe />,
+        logo: "/auditfiling-favicon-40.webp", // Add your logo path here
         metrics: {
             onPage: 20,
             offPage: 80,
@@ -105,13 +103,11 @@ const portfolioData = {
             "Developed an effective content strategy.",
             "Implemented a robust SMO plan.",
             "Improved keyword rankings across targeted niches.",
-            "Increased website traffic and search visibility.",
         ],
-        color: "blue",
     },
     cloudsat: {
         title: "CloudSat Digital Marketing Campaign",
-        icon: <FaCloud />,
+        logo: "/cloudsat-icon.png", // Add your logo path here
         metrics: {
             onPage: 65,
             offPage: 35,
@@ -123,13 +119,11 @@ const portfolioData = {
             "Created targeted content for B2B audience.",
             "Improved domain authority through strategic backlinks.",
             "Increased organic traffic by 150% in 6 months.",
-            "Optimized for cloud computing keywords.",
         ],
-        color: "cyan",
     },
     i4option: {
         title: "i4option Tech SEO Optimization",
-        icon: <FaCode />,
+        logo: "i4option-icon.jpg", // Add your logo path here
         metrics: {
             onPage: 45,
             offPage: 55,
@@ -141,9 +135,7 @@ const portfolioData = {
             "Fixed crawl errors and improved site structure.",
             "Optimized for mobile-first indexing.",
             "Improved page speed and core web vitals.",
-            "Enhanced schema markup for better visibility.",
         ],
-        color: "purple",
     },
 };
 
@@ -167,59 +159,26 @@ const ServicesPortfolio = () => {
                     Comprehensive digital services solutions to deliver your online presence and drive financial growth.
                 </p>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-                    {services.map((item, i) => (
-                        <div
-                            key={i}
-                            className="bg-white rounded-xl p-6 shadow-sm border border-blue-100 text-left hover:shadow-xl transition-all duration-300 hover:border-[#1e8acb]"
-                        >
-                            <div className="text-[#1e8acb] text-3xl mb-4">
-                                {item.icon}
-                            </div>
+                {/* 3-2-1 Card Layout */}
+                <div className="mt-12 flex flex-col items-center">
+                    {/* First Row - 3 Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl">
+                        {services.slice(0, 4).map((item, i) => (
+                            <ServiceCard key={i} item={item} />
+                        ))}
+                    </div>
 
-                            <h3 className="font-semibold text-gray-800 text-lg mb-2">
-                                {item.title}
-                            </h3>
+                    {/* Second Row - 2 Cards (Centered) */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mt-6">
+                        {services.slice(4, 7).map((item, i) => (
+                            <ServiceCard key={i + 3} item={item} />
+                        ))}
+                    </div>
 
-                            <p className="text-gray-500 text-sm leading-relaxed">
-                                {item.desc}
-                            </p>
 
-                            {/* Tools with Images */}
-                            <div className="mt-4 pt-4 border-t border-gray-100">
-                                <p className="text-xs text-gray-400 mb-2 text-left">Tools We Use:</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {item.tools.map((tool, toolIndex) => (
-                                        <span
-                                            key={toolIndex}
-                                            className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-700 px-3 py-3 rounded-full border border-gray-200 hover:border-[#1e8acb] hover:bg-blue-50 transition-colors duration-200"
-                                            title={tool.name}
-                                        >
-                                            <img
-                                                src={tool.image}
-                                                alt={tool.name}
-                                                className="w-6 h-6 object-contain"
-                                                onError={(e) => {
-                                                    e.target.onerror = null;
-                                                    e.target.src = "/images/tools/fallback.png";
-                                                }}
-                                            />
-                                            {/* <span className="ml-1">{tool.name}</span> */}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="mt-4 text-[#1e8acb] text-sm font-semibold flex items-center gap-2 cursor-pointer hover:translate-x-1 transition-transform">
-                                Learn More <FaArrowRight size={12} />
-                            </div>
-                        </div>
-                    ))}
                 </div>
 
-                <button className="mt-10 bg-[#1e8acb] text-white px-8 py-3 rounded-full shadow-lg hover:bg-[#1e8acb] font-semibold transition-all duration-300 hover:scale-105">
-                    Get Started
-                </button>
+
             </div>
 
             {/* ===== PORTFOLIO SECTION ===== */}
@@ -248,9 +207,15 @@ const ServicesPortfolio = () => {
                                     : "bg-white border border-gray-200 text-gray-600 hover:border-blue-300"
                                     }`}
                             >
-                                <span className={activeTab === key ? "text-white" : `text-${portfolioData[key].color}-500`}>
-                                    {portfolioData[key].icon}
-                                </span>
+                                <img
+                                    src={portfolioData[key].logo}
+                                    alt={key}
+                                    className="w-5 h-5 object-contain"
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = "/images/portfolio/fallback.png";
+                                    }}
+                                />
                                 {key === "auditfiling" ? "AuditFiling" :
                                     key === "cloudsat" ? "CloudSat" : "i4option"}
                             </button>
@@ -261,8 +226,16 @@ const ServicesPortfolio = () => {
                     <div className="bg-white rounded-xl shadow-xl border border-blue-100 mt-10 p-8 text-left hover:shadow-2xl transition-shadow duration-300">
                         <div className="flex flex-wrap justify-between items-center gap-4">
                             <div className="flex items-center gap-3">
-                                <div className={`text-[#1e8acb] text-2xl`}>
-                                    {portfolioData[activeTab].icon}
+                                <div className="w-10 h-10 bg-gray-100 rounded-lg p-1.5 flex items-center justify-center border border-gray-200">
+                                    <img
+                                        src={portfolioData[activeTab].logo}
+                                        alt={portfolioData[activeTab].title}
+                                        className="w-full h-full object-contain"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = "/images/portfolio/fallback.png";
+                                        }}
+                                    />
                                 </div>
                                 <h3 className="font-semibold text-gray-800 text-xl">
                                     {portfolioData[activeTab].title}
@@ -277,13 +250,10 @@ const ServicesPortfolio = () => {
                         {/* Metrics with Progress Bars */}
                         <div className="grid grid-cols-4 gap-6 mt-8">
                             {[
-                                { label: "On-Page", value: portfolioData[activeTab].metrics.onPage, color: "[#1e8acb]" },
-                                { label: "Off-Page", value: portfolioData[activeTab].metrics.offPage, color: "[#1e8acb]" },
-                                { label: "Technical SEO", value: portfolioData[activeTab].metrics.TechnicalSEO, color: "[#1e8acb]" },
-                                {
-                                    label: "SMM Strategy", value: portfolioData[activeTab].metrics.SMMStrategy
-                                    , color: "[#1e8acb]"
-                                }
+                                { label: "On-Page", value: portfolioData[activeTab].metrics.onPage },
+                                { label: "Off-Page", value: portfolioData[activeTab].metrics.offPage },
+                                { label: "Technical SEO", value: portfolioData[activeTab].metrics.TechnicalSEO },
+                                { label: "SMM Strategy", value: portfolioData[activeTab].metrics.SMMStrategy }
                             ].map((metric, index) => (
                                 <div
                                     key={index}
@@ -291,13 +261,13 @@ const ServicesPortfolio = () => {
                                 >
                                     <div className="flex justify-between items-center mb-2">
                                         <p className="text-sm text-gray-500">{metric.label}</p>
-                                        <p className={`font-bold text-${metric.color}-600 text-lg`}>
+                                        <p className="font-bold text-[#1e8acb] text-lg">
                                             {metric.value}%
                                         </p>
                                     </div>
                                     <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                                         <div
-                                            className={`h-full bg-gradient-to-r from-${metric.color}-500 to-${metric.color}-300`}
+                                            className="h-full bg-gradient-to-r from-[#1e8acb] to-[#4aa3df]"
                                             style={{ width: `${metric.value}%` }}
                                         />
                                     </div>
@@ -306,36 +276,26 @@ const ServicesPortfolio = () => {
                         </div>
 
                         {/* Key Deliverables */}
-                        <div className="mt-8">
-                            <p className="font-semibold text-gray-700 mb-3 flex items-center gap-2">
-                                <span>Key Deliverables:</span>
+                        <div className="mt-5">
+                            <p className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                                <span>Key Achievements</span>
                                 <FaExternalLinkAlt size={14} className="text-[#1e8acb]" />
                             </p>
 
-                            <ul className="space-y-2">
+                            <ul className="grid grid-cols-2 gap-4 mt-4">
                                 {portfolioData[activeTab].deliverables.map((item, index) => (
                                     <li
                                         key={index}
-                                        className="text-sm text-gray-600 flex items-start gap-2 hover:translate-x-1 transition-transform"
+                                        className="text-sm text-gray-700 flex items-start gap-3 p-4 bg-gray-50 border border-blue-100 rounded-lg hover:bg-gray-100  hover:shadow-md transition-all duration-300"
                                     >
-                                        <span className={`text-${portfolioData[activeTab].color}-500`}>
-                                            ✔
-                                        </span>
-                                        {item}
+                                        <span className="text-[#1e8acb] font-bold text-base mt-0.5">✓</span>
+                                        <span className="flex-1">{item}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
-                        {/* Contact Section */}
-                        <div className="mt-8 pt-6 border-t border-gray-100 flex flex-wrap justify-between items-center">
-                            <p className="text-gray-600 font-medium">
-                                Contact Us Today:
-                            </p>
-                            <button className="flex items-center gap-2 bg-[#1e8acb] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#1e8acb] hover:scale-105 transition-all duration-300">
-                                Submit Project <FaArrowRight size={12} />
-                            </button>
-                        </div>
+
                     </div>
 
                     {/* View All Projects Link */}
@@ -349,5 +309,45 @@ const ServicesPortfolio = () => {
         </div>
     );
 };
+
+// Extracted Service Card component for reusability
+const ServiceCard = ({ item }) => (
+    <div className="bg-white rounded-xl p-6 shadow-sm border border-blue-100 text-left hover:shadow-xl transition-all duration-300 hover:bg-[#e5edf1] hover:text-[#1e8acb] h-full">
+        <div className="inline-flex items-center gap-1 text-xl bg-[#d9e4eb] text-[#1e8acb] px-3 py-3 rounded-full border border-gray-200 hover:border-[#1e8acb] hover:bg-blue-50 transition-colors duration-200">
+            {item.icon}
+        </div>
+
+        <h3 className="font-semibold text-lg mb-2">
+            {item.title}
+        </h3>
+
+        <p className="text-gray-600 text-[15px] leading-relaxed">
+            {item.desc}
+        </p>
+
+        {/* Tools with Images */}
+        <div className="mt-4 pt-4 border-t border-blue-200">
+            <div className="flex flex-wrap gap-2">
+                {item.tools.map((tool, toolIndex) => (
+                    <span
+                        key={toolIndex}
+                        className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-700 px-3 py-3 rounded-full border border-gray-200 hover:border-[#1e8acb] hover:bg-blue-50 transition-colors duration-200"
+                        title={tool.name}
+                    >
+                        <img
+                            src={tool.image}
+                            alt={tool.name}
+                            className="w-6 h-6 object-contain"
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = "/images/tools/fallback.png";
+                            }}
+                        />
+                    </span>
+                ))}
+            </div>
+        </div>
+    </div>
+);
 
 export default ServicesPortfolio;
