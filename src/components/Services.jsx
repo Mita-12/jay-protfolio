@@ -11,6 +11,10 @@ import {
     FaGlobe,
     FaCloud,
     FaCode,
+    FaFileAlt,
+    FaLink,
+    FaCog,
+    FaUsers,
 } from "react-icons/fa";
 
 const services = [
@@ -60,7 +64,9 @@ const services = [
         desc: "Build editorial calendars, pillar-cluster content models, and distribution plans that align with your brand goals and fuel long-term organic growth",
         tools: [
             { name: "Notion", image: "/tools/notion.png" },
-            { name: "Google Trends", image: "/tools/googleanalytics.png" },
+            { name: "Google Trends", image: "/tools/google.png" },
+            { name: "HubSpot", image: "/tools/hubspot.png" },
+
         ]
     },
     {
@@ -91,59 +97,98 @@ const services = [
 const portfolioData = {
     auditfiling: {
         title: "AuditFiling Website SEO & SMO",
-        logo: "/auditfiling-favicon-40.webp", // Add your logo path here
-        metrics: {
-            onPage: 20,
-            offPage: 80,
-            TechnicalSEO: 70,
-            SMMStrategy: 70
-        },
+        logo: "/auditfiling-favicon-40.webp",
+        metrics: [
+            { name: "On-Page", icon: <FaFileAlt />, description: "Full optimization" },
+            { name: "Off-Page", icon: <FaLink />, description: "Link building" },
+            { name: "Technical SEO", icon: <FaCog />, description: "Site health" },
+            { name: "SMM Strategy", icon: <FaUsers />, description: "Social growth" },
+        ],
         deliverables: [
             "Optimized on-page elements to improve SEO.",
             "Developed an effective content strategy.",
             "Implemented a robust SMO plan.",
             "Improved keyword rankings across targeted niches.",
         ],
+        projectImages: [
+            "/preview/auditfiling-preview-1.png",
+            "/preview/auditfiling-preview-2.png",
+            "/preview/auditfiling-preview-3.png",
+            "/preview/auditfiling-preview-4.png",
+        ]
     },
     cloudsat: {
         title: "CloudSat Digital Marketing Campaign",
-        logo: "/cloudsat-icon.png", // Add your logo path here
-        metrics: {
-            onPage: 65,
-            offPage: 35,
-            TechnicalSEO: 70,
-            SMMStrategy: 70
-        },
+        logo: "/cloudsat-icon.png",
+        metrics: [
+            { name: "On-Page", icon: <FaFileAlt />, description: "Full optimization" },
+            { name: "Off-Page", icon: <FaLink />, description: "Link building" },
+            { name: "Technical SEO", icon: <FaCog />, description: "Site health" },
+            { name: "SMM Strategy", icon: <FaUsers />, description: "Social growth" },
+        ],
         deliverables: [
             "Developed comprehensive SEO strategy for cloud services.",
             "Created targeted content for B2B audience.",
             "Improved domain authority through strategic backlinks.",
             "Increased organic traffic by 150% in 6 months.",
         ],
+        projectImages: [
+            "/cloudsat/Screenshot 2026-02-12 150258.png",
+            "/cloudsat/Screenshot 2026-02-12 150258.png",
+            "/cloudsat/Screenshot 2026-02-12 150258.png",
+        ]
     },
     i4option: {
         title: "i4option Tech SEO Optimization",
-        logo: "i4option-icon.jpg", // Add your logo path here
-        metrics: {
-            onPage: 45,
-            offPage: 55,
-            TechnicalSEO: 70,
-            SMMStrategy: 70
-        },
+        logo: "i4option-icon.jpg",
+        metrics: [
+            { name: "On-Page", icon: <FaFileAlt />, description: "Full optimization" },
+            { name: "Off-Page", icon: <FaLink />, description: "Link building" },
+            { name: "Technical SEO", icon: <FaCog />, description: "Site health" },
+            { name: "SMM Strategy", icon: <FaUsers />, description: "Social growth" },
+        ],
         deliverables: [
             "Technical SEO audit and implementation.",
             "Fixed crawl errors and improved site structure.",
             "Optimized for mobile-first indexing.",
             "Improved page speed and core web vitals.",
         ],
+        projectImages: [
+            "/cloudsat/Screenshot 2026-02-12 150258.png",
+            "/cloudsat/Screenshot 2026-02-12 150258.png",
+            "/cloudsat/Screenshot 2026-02-12 150308.png",
+            "/cloudsat/Screenshot 2026-02-12 150312.png",
+            "/cloudsat/Screenshot 2026-02-12 150319.png",
+        ]
     },
 };
 
 const ServicesPortfolio = () => {
     const [activeTab, setActiveTab] = useState("auditfiling");
+    const [showProjectImages, setShowProjectImages] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const handleProjectDoneClick = () => {
+        setShowProjectImages(!showProjectImages);
+        setCurrentImageIndex(0); // Reset to first image when opening
+    };
+
+    const handlePrevImage = (e) => {
+        e.stopPropagation();
+        setCurrentImageIndex((prev) =>
+            prev === 0 ? portfolioData[activeTab].projectImages.length - 1 : prev - 1
+        );
+    };
+
+    const handleNextImage = (e) => {
+        e.stopPropagation();
+        setCurrentImageIndex((prev) =>
+            prev === portfolioData[activeTab].projectImages.length - 1 ? 0 : prev + 1
+        );
+    };
 
     return (
-        <div className="bg-[#eef5f9] min-h-screen py-16 px-6 md:px-20 overflow-hidden">
+        <div className="bg-[#ced5da] min-h-screen py-16 px-6 md:px-20 overflow-hidden">
 
             {/* ===== SERVICES SECTION ===== */}
             <div className="max-w-6xl mx-auto text-center">
@@ -174,15 +219,11 @@ const ServicesPortfolio = () => {
                             <ServiceCard key={i + 3} item={item} />
                         ))}
                     </div>
-
-
                 </div>
-
-
             </div>
 
             {/* ===== PORTFOLIO SECTION ===== */}
-            <div className="mt-20 bg-[#e6f0f7] py-16 rounded-3xl">
+            <div className="mt-20 bg-gray-50 py-16 rounded-3xl">
                 <div className="max-w-5xl mx-auto text-center px-6">
                     <p className="text-[#1e8acb] font-semibold">
                         MY PORTFOLIO
@@ -201,7 +242,11 @@ const ServicesPortfolio = () => {
                         {Object.keys(portfolioData).map((key) => (
                             <button
                                 key={key}
-                                onClick={() => setActiveTab(key)}
+                                onClick={() => {
+                                    setActiveTab(key);
+                                    setShowProjectImages(false); // Reset to deliverables view when changing tabs
+                                    setCurrentImageIndex(0);
+                                }}
                                 className={`px-8 py-3 rounded-full text-sm font-medium flex items-center gap-2 transition-all duration-300 ${activeTab === key
                                     ? "bg-[#1e8acb] text-white shadow-lg"
                                     : "bg-white border border-gray-200 text-gray-600 hover:border-blue-300"
@@ -242,60 +287,116 @@ const ServicesPortfolio = () => {
                                 </h3>
                             </div>
 
-                            <span className="text-sm bg-blue-100 text-[#1e8acb] px-4 py-1.5 rounded-full font-medium">
+                            <button
+                                onClick={handleProjectDoneClick}
+                                className={`text-sm px-4 py-1.5 rounded-full font-medium transition-all duration-300 flex items-center gap-2 ${showProjectImages
+                                        ? "bg-[#1e8acb] text-white"
+                                        : "bg-blue-100 text-[#1e8acb] hover:bg-blue-200"
+                                    }`}
+                            >
                                 Project Done
-                            </span>
+                                <span className={`text-xs transition-transform duration-300 ${showProjectImages ? 'rotate-180' : ''}`}>
+                                    ▼
+                                </span>
+                            </button>
                         </div>
 
-                        {/* Metrics with Progress Bars */}
+                        {/* Metrics with Icons and Descriptions */}
                         <div className="grid grid-cols-4 gap-6 mt-8">
-                            {[
-                                { label: "On-Page", value: portfolioData[activeTab].metrics.onPage },
-                                { label: "Off-Page", value: portfolioData[activeTab].metrics.offPage },
-                                { label: "Technical SEO", value: portfolioData[activeTab].metrics.TechnicalSEO },
-                                { label: "SMM Strategy", value: portfolioData[activeTab].metrics.SMMStrategy }
-                            ].map((metric, index) => (
+                            {portfolioData[activeTab].metrics.map((metric, index) => (
                                 <div
                                     key={index}
-                                    className="border border-blue-100 rounded-xl p-5 bg-white hover:shadow-md transition-shadow duration-300"
+                                    className="border border-blue-100 rounded-xl p-5 bg-gray-100 hover:shadow-md transition-shadow duration-300"
                                 >
-                                    <div className="flex justify-between items-center mb-2">
-                                        <p className="text-sm text-gray-500">{metric.label}</p>
-                                        <p className="font-bold text-[#1e8acb] text-lg">
-                                            {metric.value}%
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <span className="text-[#1e8acb] text-xl">
+                                            {metric.icon}
+                                        </span>
+                                        <p className="font-semibold text-gray-700">
+                                            {metric.name}
                                         </p>
                                     </div>
-                                    <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                                        <div
-                                            className="h-full bg-gradient-to-r from-[#1e8acb] to-[#4aa3df]"
-                                            style={{ width: `${metric.value}%` }}
-                                        />
-                                    </div>
+                                    <p className="text-sm text-gray-500">
+                                        {metric.description}
+                                    </p>
                                 </div>
                             ))}
                         </div>
 
-                        {/* Key Deliverables */}
-                        <div className="mt-5">
-                            <p className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                                <span>Key Achievements</span>
-                                <FaExternalLinkAlt size={14} className="text-[#1e8acb]" />
-                            </p>
+                        {/* Conditional Rendering: Key Achievements or Image Slider */}
+                        {showProjectImages ? (
+                            <div className="mt-5">
+                                <p className="font-semibold text-gray-700 mb-4 flex items-center gap-2">
+                                    <span>Project Gallery</span>
+                                    <span className="text-xs text-gray-500">
+                                        ({currentImageIndex + 1} / {portfolioData[activeTab].projectImages.length})
+                                    </span>
+                                </p>
 
-                            <ul className="grid grid-cols-2 gap-4 mt-4">
-                                {portfolioData[activeTab].deliverables.map((item, index) => (
-                                    <li
-                                        key={index}
-                                        className="text-sm text-gray-700 flex items-start gap-3 p-4 bg-gray-50 border border-blue-100 rounded-lg hover:bg-gray-100  hover:shadow-md transition-all duration-300"
-                                    >
-                                        <span className="text-[#1e8acb] font-bold text-base mt-0.5">✓</span>
-                                        <span className="flex-1">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                                <div className="relative group">
+                                    {/* Main Image */}
+                                    <div className="relative h-96 bg-gray-100 rounded-xl overflow-hidden border border-blue-100">
+                                        <img
+                                            src={portfolioData[activeTab].projectImages[currentImageIndex]}
+                                            alt={`Project ${currentImageIndex + 1}`}
+                                            className="w-full h-full object-contain"
+                                            onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src = "/images/portfolio/fallback-large.png";
+                                            }}
+                                        />
 
+                                        {/* Navigation Arrows */}
+                                        <button
+                                            onClick={handlePrevImage}
+                                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/70"
+                                        >
+                                            ←
+                                        </button>
 
+                                        <button
+                                            onClick={handleNextImage}
+                                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/70"
+                                        >
+                                            →
+                                        </button>
+                                    </div>
+
+                                    {/* Thumbnail Navigation */}
+                                    <div className="flex justify-center gap-2 mt-4">
+                                        {portfolioData[activeTab].projectImages.map((_, index) => (
+                                            <button
+                                                key={index}
+                                                onClick={() => setCurrentImageIndex(index)}
+                                                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentImageIndex
+                                                        ? "bg-[#1e8acb] w-8"
+                                                        : "bg-gray-300 hover:bg-gray-400"
+                                                    }`}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="mt-5">
+                                <p className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                                    <span>Key Achievements</span>
+                                    <FaExternalLinkAlt size={14} className="text-[#1e8acb]" />
+                                </p>
+
+                                <ul className="grid grid-cols-2 gap-4 mt-4">
+                                    {portfolioData[activeTab].deliverables.map((item, index) => (
+                                        <li
+                                            key={index}
+                                            className="text-sm text-gray-700 flex items-start gap-3 p-4 bg-gray-50 border border-blue-100 rounded-lg hover:bg-gray-100 hover:shadow-md transition-all duration-300"
+                                        >
+                                            <span className="text-[#1e8acb] font-bold text-base mt-0.5">✓</span>
+                                            <span className="flex-1">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
                     </div>
 
                     {/* View All Projects Link */}
@@ -306,6 +407,8 @@ const ServicesPortfolio = () => {
                     </div>
                 </div>
             </div>
+
+            
         </div>
     );
 };

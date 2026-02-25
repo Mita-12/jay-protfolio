@@ -7,7 +7,7 @@ import {
 
 const Experience = () => {
     return (
-        <section className="relative bg-[#eaf3f9] py-20 px-6 md:px-16 overflow-hidden">
+        <section className="relative bg-[#cfd5da] py-20 px-6 md:px-16 overflow-hidden">
             {/* TITLE */}
             <div className="text-center mb-16 relative z-10">
                 <p className="text-[#1e8acb] text-sm font-semibold mb-2">

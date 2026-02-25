@@ -1,24 +1,29 @@
 import React from "react";
-import {
-    FaSearch,
-    FaChartLine,
-    FaFileAlt,
-    FaBullseye,
-    FaUsers,
-    FaBolt,
-} from "react-icons/fa";
+import { 
+  Search, 
+  FileSearch, 
+  TrendingUp, 
+  BarChart3, 
+  Users, 
+  FileText, 
+  Lightbulb, 
+  LineChart, 
+  Target, 
+  Zap, 
+  Brain 
+} from "lucide-react";
 
 const skills = [
-    { name: "Technical SEO & Website Auditing", percent: 90, icon: <FaSearch /> },
-    { name: "Keyword Research & Search Intent", percent: 92, icon: <FaSearch /> },
-    { name: "On-Page SEO & Content Optimization", percent: 88, icon: <FaFileAlt /> },
-    { name: "Organic Traffic Growth", percent: 85, icon: <FaChartLine /> },
-    { name: "SEO Analytics & Reporting", percent: 90, icon: <FaChartLine /> },
-    { name: "Competitor & Market Research", percent: 87, icon: <FaBullseye /> },
-    { name: "Social Media Strategy", percent: 82, icon: <FaUsers /> },
-    { name: "Content Planning & Scripting", percent: 85, icon: <FaFileAlt /> },
-    { name: "Trending Content Research", percent: 88, icon: <FaBolt /> },
-    { name: "Google Analytics & Search Console", percent: 91, icon: <FaChartLine /> },
+  { name: "Technical SEO & Website Auditing", percent: 90, icon: <Search size={20} /> },
+  { name: "Keyword Research & Search Intent", percent: 92, icon: <FileSearch size={20} /> },
+  { name: "On-Page SEO & Content Optimization", percent: 88, icon: <FileText size={20} /> },
+  { name: "Organic Traffic Growth", percent: 85, icon: <TrendingUp size={20} /> },
+  { name: "SEO Analytics & Reporting", percent: 90, icon: <BarChart3 size={20} /> },
+  { name: "Competitor & Market Research", percent: 87, icon: <Target size={20} /> },
+  { name: "Social Media Strategy", percent: 82, icon: <Users size={20} /> },
+  { name: "Content Planning & Scripting", percent: 85, icon: <Lightbulb size={20} /> },
+  { name: "Trending Content Research", percent: 88, icon: <Zap size={20} /> },
+  { name: "Google Analytics & Search Console", percent: 91, icon: <LineChart size={20} /> },
 ];
 
 const Skills = () => {
