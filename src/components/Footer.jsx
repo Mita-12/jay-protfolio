@@ -33,7 +33,7 @@ const ContactFooter = () => {
                                 </div>
                                 <div>
                                     <p className="text-gray-500 text-sm">Email</p>
-                                    <p className="font-semibold text-gray-700">dustin86@gmail.com</p>
+                                    <p className="font-semibold text-[#1e8acb]">dustin86@gmail.com</p>
                                 </div>
                             </div>
 
@@ -51,7 +51,7 @@ const ContactFooter = () => {
                             </div>
 
                             {/* CTA Box */}
-                            <div className="bg-blue-100 border border-blue-200 p-6 rounded-xl">
+                            <div className="bg-gradient-to-r from-[#bcd9ec] to-blue-100 border border-blue-200 p-6 rounded-xl">
                                 <p className="font-semibold text-gray-700">
                                     Ready to elevate your digital presence?
                                 </p>
