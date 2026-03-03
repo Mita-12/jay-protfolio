@@ -28,60 +28,61 @@ const skills = [
 
 const Skills = () => {
     return (
-        <section className="relative bg-[#eaf3f9] py-20 px-6 md:px-20">
+      <section id="skills" className="relative bg-[#eaf3f9] py-20 px-6 md:px-20">
 
-            {/* TITLE */}
-            <div className="text-center mb-16 relative z-10">
-                <p className="text-[#1e8acb] text-sm font-semibold mb-2">
-                    WHAT I DO BEST
-                </p>
+    {/* TITLE */}
+    <div className="text-center mb-16 relative z-10">
+        <p className="text-[#1e8acb] text-sm font-semibold mb-2">
+            WHAT I DO BEST
+        </p>
 
-                <h2 className="text-4xl font-bold text-gray-900">
-                    Skills & <span className="text-[#1e8acb]">Expertise</span>
-                </h2>
+        <h2 className="text-4xl font-bold text-gray-900">
+            Skills & <span className="text-[#1e8acb]">Expertise</span>
+        </h2>
 
-                <p className="text-gray-600 mt-4 max-w-xl mx-auto">
-                    A comprehensive skill set built through continuous learning and
-                    hands-on experience
-                </p>
-            </div>
+        <p className="text-gray-600 mt-4 max-w-xl mx-auto">
+            A comprehensive skill set built through continuous learning and
+            hands-on experience
+        </p>
+    </div>
 
-            {/* SKILLS GRID */}
-            <div className="grid md:grid-cols-2 gap-6 relative z-10">
-
-                {skills.map((skill, index) => (
-                    <div
-                        key={index}
-                        className="bg-white p-6 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow duration-300"
-                    >
-                        <div className="flex justify-between items-center mb-4">
-                            <div className="flex items-center gap-3">
-                                <div className="bg-blue-100 text-[#1e8acb] p-3 rounded-lg">
-                                    {skill.icon}
-                                </div>
-                                <h3 className="font-semibold text-gray-800">
-                                    {skill.name}
-                                </h3>
-                            </div>
-
-                            <span className="text-[#1e8acb] font-semibold">
-                                {skill.percent}%
-                            </span>
+    {/* SKILLS GRID - FULL WIDTH */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10 max-w-6xl mx-auto">
+        {/* Removed the mx-auto from here and added it above with max-w-7xl to control the width */}
+        
+        {skills.map((skill, index) => (
+            <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow duration-300 w-full"
+            >
+                <div className="flex justify-between items-center mb-4">
+                    <div className="flex items-center gap-3">
+                        <div className="bg-blue-100 text-[#1e8acb] p-3 rounded-lg">
+                            {skill.icon}
                         </div>
-
-                        {/* PROGRESS BAR */}
-                        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div
-                                className="h-full bg-gradient-to-r from-[#1e8acb] to-blue-300"
-                                style={{ width: `${skill.percent}%` }}
-                            ></div>
-                        </div>
+                        <h3 className="font-semibold text-gray-800">
+                            {skill.name}
+                        </h3>
                     </div>
-                ))}
 
+                    <span className="text-[#1e8acb] font-semibold">
+                        {skill.percent}%
+                    </span>
+                </div>
+
+                {/* PROGRESS BAR */}
+                <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div
+                        className="h-full bg-linear-to-r from-[#1e8acb] to-blue-300"
+                        style={{ width: `${skill.percent}%` }}
+                    ></div>
+                </div>
             </div>
+        ))}
 
-        </section>
+    </div>
+
+</section>
     );
 };
 

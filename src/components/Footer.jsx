@@ -4,156 +4,193 @@ import { BsTwitterX } from "react-icons/bs";
 
 const ContactFooter = () => {
     return (
-        <div className="bg-[#eaf3f8]">
+       <div className="bg-[#eaf3f8]">
 
-            {/* ===== CONTACT SECTION ===== */}
-            <section className="py-20 bg-gradient-to-b from-[#eaf3f8] to-[#d7e7f3]">
-                <div className="max-w-6xl mx-auto px-6">
+    {/* ===== CONTACT SECTION ===== */}
+    <section id="contact" className="py-20 bg-linear-to-b from-[#eaf3f8] to-[#d7e7f3]">
+        <div className="max-w-6xl mx-auto px-6">
 
-                    {/* Heading */}
-                    <div className="text-center mb-12">
-                        <p className="text-[#1e8acb] font-semibold">GET IN TOUCH</p>
-                        <h2 className="text-4xl font-bold text-gray-800 mt-2">
-                            Let's <span className="text-[#1e8acb]">Connect</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3">
-                            Have a project in mind? Let's discuss how I can help grow your digital presence.
+            {/* Heading */}
+            <div className="text-center mb-12">
+                <p className="text-[#1e8acb] font-semibold">GET IN TOUCH</p>
+                <h2 className="text-4xl font-bold text-gray-800 mt-2">
+                    Let's <span className="text-[#1e8acb]">Connect</span>
+                </h2>
+                <p className="text-gray-500 mt-3">
+                    Have a project in mind? Let's discuss how I can help grow your digital presence.
+                </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+
+                {/* LEFT SIDE INFO */}
+                <div className="space-y-6">
+
+                    {/* Email Card */}
+                    <div className="bg-white p-5 rounded-xl shadow-sm flex gap-4 items-center">
+                        <div className="bg-blue-100 p-2 rounded-lg text-[#1e8acb] text-xl">
+                            <FaEnvelope />
+                        </div>
+                        <div>
+                            <p className="text-gray-500 text-sm">Email</p>
+                            <p className="font-semibold text-[#1e8acb]">dustin86@gmail.com</p>
+                        </div>
+                    </div>
+
+                    {/* Location Card */}
+                    <div className="bg-white p-5 rounded-xl shadow-sm flex gap-4 items-center">
+                        <div className="bg-blue-100 p-2 rounded-lg text-[#1e8acb] text-xl">
+                            <FaMapMarkerAlt />
+                        </div>
+                        <div>
+                            <p className="text-gray-500 text-sm">Location</p>
+                            <p className="font-semibold text-gray-700">
+                                Bhubaneswar, Odisha, India
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* CTA Box */}
+                    <div className="bg-linear-to-r from-[#bcd9ec] to-blue-100 border border-blue-200 p-6 rounded-xl">
+                        <p className="font-semibold text-gray-700">
+                            Ready to elevate your digital presence?
+                        </p>
+                        <p className="text-gray-600 text-sm mt-2">
+                            Let's create something amazing together!
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 items-start">
+                </div>
 
-                        {/* LEFT SIDE INFO */}
-                        <div className="space-y-6">
+                {/* RIGHT CONTACT FORM */}
+                <div className="bg-white p-8 rounded-2xl shadow-md">
+                    <form className="space-y-5">
 
-                            {/* Email Card */}
-                            <div className="bg-white p-5 rounded-xl shadow-sm flex gap-4 items-center">
-                                <div className="bg-blue-100 p-3 rounded-lg text-[#1e8acb] text-xl">
-                                    <FaEnvelope />
-                                </div>
-                                <div>
-                                    <p className="text-gray-500 text-sm">Email</p>
-                                    <p className="font-semibold text-[#1e8acb]">dustin86@gmail.com</p>
-                                </div>
-                            </div>
-
-                            {/* Location Card */}
-                            <div className="bg-white p-5 rounded-xl shadow-sm flex gap-4 items-center">
-                                <div className="bg-blue-100 p-3 rounded-lg text-[#1e8acb] text-xl">
-                                    <FaMapMarkerAlt />
-                                </div>
-                                <div>
-                                    <p className="text-gray-500 text-sm">Location</p>
-                                    <p className="font-semibold text-gray-700">
-                                        Bhubaneswar, Odisha, India
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* CTA Box */}
-                            <div className="bg-gradient-to-r from-[#bcd9ec] to-blue-100 border border-blue-200 p-6 rounded-xl">
-                                <p className="font-semibold text-gray-700">
-                                    Ready to elevate your digital presence?
-                                </p>
-                                <p className="text-gray-600 text-sm mt-2">
-                                    Let's create something amazing together!
-                                </p>
-                            </div>
-
-                        </div>
-
-                        {/* RIGHT CONTACT FORM */}
-                        <div className="bg-white p-8 rounded-2xl shadow-md">
-                            <form className="space-y-5">
-
-                                <div className="grid grid-cols-2 gap-4">
-                                    <input
-                                        type="text"
-                                        placeholder="John Doe"
-                                        className="border border-blue-100 bg-gray-400 p-3 rounded-lg w-full focus:outline-blue-400"
-                                    />
-                                    <input
-                                        type="email"
-                                        placeholder="john@example.com"
-                                        className="border p-3 rounded-lg  border-blue-100 bg-gray-400 w-full focus:outline-blue-400"
-                                    />
-                                </div>
-
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Full Name <span className="text-red-500">*</span>
+                                </label>
                                 <input
                                     type="text"
-                                    placeholder="How can I help you?"
-                                    className="border p-3 rounded-lg border-blue-100 bg-gray-400 w-full focus:outline-blue-400"
+                                    placeholder="John Doe"
+                                    className="border border-blue-100 bg-gray-500 p-2 rounded-lg w-full focus:outline-blue-400 focus:ring-1 focus:ring-blue-400"
                                 />
-
-                                <textarea
-                                    rows="4"
-                                    placeholder="Tell me about your project..."
-                                    className="border p-3 rounded-lg border-blue-100 bg-gray-400 w-full focus:outline-blue-400"
-                                ></textarea>
-
-                                <button className="w-full bg-[#1e8acb] text-white py-3 rounded-full flex items-center justify-center gap-2 hover:bg-blue-700 transition">
-                                    <FaPaperPlane /> Send Message
-                                </button>
-
-                            </form>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Email Address <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    placeholder="john@example.com"
+                                    className="border border-blue-100 bg-gray-500 p-2 rounded-lg w-full focus:outline-blue-400 focus:ring-1 focus:ring-blue-400"
+                                    
+                                />
+                            </div>
                         </div>
 
-                    </div>
-                </div>
-            </section>
-
-            {/* ===== FOOTER ===== */}
-            <footer className="bg-white pt-16 pb-8">
-                <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-
-                    {/* About */}
-                    <div>
-                        <h3 className="text-xl font-bold text-gray-800">Jay.</h3>
-                        <p className="text-gray-500 mt-3 text-sm leading-relaxed">
-                            SEO & SMM Specialist focused on driving organic growth
-                            through technical SEO, data-driven insights, and strategic content optimization.
-                        </p>
-                    </div>
-
-                    {/* Links */}
-                    <div>
-                        <h4 className="font-semibold text-gray-800 mb-4">Quick Links</h4>
-                        <div className="grid grid-cols-2 gap-2 text-gray-500 text-sm">
-                            <p>About</p>
-                            <p>Skills</p>
-                            <p>Experience</p>
-                            <p>Portfolio</p>
-                            <p>Services</p>
-                            <p>Contact</p>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                                Subject <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="How can I help you?"
+                                className="border border-blue-100 bg-gray-500 p-2 rounded-lg w-full focus:outline-blue-400 focus:ring-1 focus:ring-blue-400"
+                            />
                         </div>
-                    </div>
 
-                    {/* Contact */}
-                    <div>
-                        <h4 className="font-semibold text-gray-800 mb-4">Contact</h4>
-                        <p className="text-gray-500 text-sm">dustin86@gmail.com</p>
-                        <p className="text-gray-500 text-sm mt-2">
-                            Bhubaneswar, Odisha, India
-                        </p>
-                    </div>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                                Message <span className="text-red-500">*</span>
+                            </label>
+                            <textarea
+                                rows="4"
+                                placeholder="Tell me about your project..."
+                                className="border border-blue-100 bg-gray-500 p-2 rounded-lg w-full focus:outline-blue-400 focus:ring-1 focus:ring-blue-400"
+                            ></textarea>
+                        </div>
 
+                        <button type="submit" className="w-full bg-[#1e8acb] text-white py-3 rounded-full flex items-center justify-center gap-2 hover:bg-blue-700 transition duration-300 font-medium">
+                            <FaPaperPlane /> Send Message
+                        </button>
+
+                    </form>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className=" border-t border-t-blue-100   mt-10 pt-6 text-center">
-                    <p className="text-gray-400 text-sm">
-                        © 2025 Jay Narayan Das. Made with 💙
-                    </p>
+            </div>
+        </div>
+    </section>
 
-                    <div className="flex justify-center gap-4 mt-4 text-gray-500 text-lg">
-                        <FaLinkedin />
-                        <FaInstagram />
-                        <BsTwitterX />
-                    </div>
+    {/* ===== FOOTER ===== */}
+    <footer className="bg-white pt-16 pb-8">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+            {/* About */}
+            <div>
+                <h3 className="text-2xl font-bold text-gray-800">Jay <span className="text-[#1e8acb]">.</span></h3>
+                <p className="text-gray-600 mt-3 text-sm leading-relaxed">
+                    SEO & SMM Specialist focused on driving organic growth
+                    through technical SEO, data-driven insights, and strategic content optimization.
+                </p>
+            </div>
+
+            {/* Links */}
+            <div>
+                <h4 className="font-semibold text-gray-800 mb-4">Quick Links</h4>
+                <div className="grid grid-cols-2 gap-2 text-gray-500 text-sm">
+                    <p className="cursor-pointer hover:text-[#1e8acb] transition">About</p>
+                    <p className="cursor-pointer hover:text-[#1e8acb] transition">Skills</p>
+                    <p className="cursor-pointer hover:text-[#1e8acb] transition">Experience</p>
+                    <p className="cursor-pointer hover:text-[#1e8acb] transition">Portfolio</p>
+                    <p className="cursor-pointer hover:text-[#1e8acb] transition">Services</p>
+                    <p className="cursor-pointer hover:text-[#1e8acb] transition">Contact</p>
                 </div>
-            </footer>
+            </div>
+
+            {/* Contact */}
+            <div>
+                <h4 className="font-semibold text-gray-800 mb-4">Contact</h4>
+                <p className="text-gray-500 text-sm">dustin86@gmail.com</p>
+                <p className="text-gray-500 text-sm mt-2">
+                    Bhubaneswar, Odisha, India
+                </p>
+            </div>
 
         </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-blue-100 mt-10 pt-6 text-center">
+            <p className="text-gray-400 text-sm">
+                © 2025 Jay Narayan Das. Made with 💙
+            </p>
+
+            <div className="flex justify-center gap-4 mt-4 text-gray-500 text-lg">
+                <div className="grid grid-cols-3 gap-2 items-center justify-center">
+                    <div className="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full shadow-md cursor-pointer hover:bg-blue-100 transition">
+                        <a href="https://www.linkedin.com/in/jay-narayan-das-1b99b4208/" target="_blank" rel="noopener noreferrer">
+                            <img src="/linkedin-icon.png" alt="LinkedIn" className="w-4 h-4" />
+                        </a>
+                    </div>
+
+                    <div className="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full shadow-md cursor-pointer hover:bg-blue-100 transition">
+                        <a href="https://x.com/situn_das_" target="_blank" rel="noopener noreferrer">
+                            <img src="/x-icon.ico" alt="Twitter" className="w-4 h-4" />
+                        </a>
+                    </div>
+
+                    <div className="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full shadow-md cursor-pointer hover:bg-blue-100 transition">
+                        <a href="https://www.instagram.com/situndas_official_/" target="_blank" rel="noopener noreferrer">
+                            <img src="/instagram-icon-32.webp" alt="Instagram" className="w-4 h-4" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
     );
 };
 

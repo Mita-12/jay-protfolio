@@ -3,7 +3,7 @@ import { FaUserGraduate, FaCalendarAlt, FaMapMarkerAlt, FaEnvelope } from "react
 
 const About = () => {
     return (
-        <section className="bg-[#f4f8fb] py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+        <section id="about" className="bg-[#f4f8fb] py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
 
             {/* TITLE */}
             <div className="text-center mb-8 sm:mb-12 md:mb-16">
@@ -48,15 +48,15 @@ const About = () => {
                         <div className="bg-white p-4 sm:p-5 rounded-xl shadow-sm border border-blue-100 hover:shadow-lg hover:border-[#1e8acb] transition-all duration-300">
                             <p className="text-gray-500 text-xs sm:text-sm mb-1 sm:mb-2">Location</p>
                             <div className="flex items-center gap-2 text-gray-800 font-semibold text-sm sm:text-base">
-                                <FaMapMarkerAlt className="text-[#1e8acb] flex-shrink-0" />
-                                <span className="break-words">Bhubaneswar, Odisha</span>
+                                <FaMapMarkerAlt className="text-[#1e8acb] shrink-0" />
+                                <span className="break-normal">Bhubaneswar, Odisha</span>
                             </div>
                         </div>
 
                         <div className="bg-white p-4 sm:p-5 rounded-xl shadow-sm border border-blue-100 hover:shadow-lg hover:border-[#1e8acb] transition-all duration-300">
                             <p className="text-gray-500 text-xs sm:text-sm mb-1 sm:mb-2">Email</p>
                             <div className="flex items-center gap-2 text-[#1e8acb] font-semibold text-sm sm:text-base">
-                                <FaEnvelope className="flex-shrink-0" />
+                                <FaEnvelope className="shrink-0" />
                                 <span className="break-all">dassitun6@gmail.com</span>
                             </div>
                         </div>
@@ -66,18 +66,18 @@ const About = () => {
                 {/* RIGHT SIDE — TIMELINE */}
                 <div className="order-1 md:order-2 mb-6 md:mb-0">
                     <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-6 sm:mb-10 flex items-center gap-2">
-                        <FaUserGraduate className="text-[#1e8acb] flex-shrink-0" />
+                        <FaUserGraduate className="text-[#1e8acb] shrink-0" />
                         <span>Education Journey</span>
                     </h3>
 
                     <div className="relative border-l-2 border-blue-300 pl-4 sm:pl-6 md:pl-8 lg:pl-10 space-y-6 sm:space-y-8 md:space-y-10">
                         {/* ITEM 1 */}
                         <div className="relative">
-                            <div className="absolute -left-[10px] sm:-left-[14px] md:-left-[16px] lg:-left-[18px] top-2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-[#1e8acb] rounded-full"></div>
+                            <div className="absolute -left-2.5 sm:-left-3.5 md:-left-4 lg:-left-4.5 top-2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-[#1e8acb] rounded-full\"></div>
 
                             <div className="bg-white p-4 sm:p-5 md:p-6 rounded-xl shadow border border-blue-100 hover:shadow-lg hover:border-[#1e8acb] transition-all duration-300">
                                 <p className="text-gray-500 flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2 text-xs sm:text-sm">
-                                    <FaCalendarAlt className="flex-shrink-0" />
+                                    <FaCalendarAlt className="shrink-0" />
                                     <span>Nov 2021 – Jun 2024</span>
                                 </p>
 
@@ -95,11 +95,11 @@ const About = () => {
 
                         {/* ITEM 2 */}
                         <div className="relative">
-                            <div className="absolute -left-[10px] sm:-left-[14px] md:-left-[16px] lg:-left-[18px] top-2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-[#1e8acb] rounded-full"></div>
+                            <div className="absolute -left-2.5 sm:-left-3.5 md:-left-4 lg:-left-4.5 top-2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-[#1e8acb] rounded-full"></div>
 
                             <div className="bg-white p-4 sm:p-5 md:p-6 rounded-xl shadow border border-blue-100 hover:shadow-lg hover:border-[#1e8acb] transition-all duration-300">
                                 <p className="text-gray-500 flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2 text-xs sm:text-sm">
-                                    <FaCalendarAlt className="flex-shrink-0" />
+                                    <FaCalendarAlt className="shrink-0" />
                                     <span>2017 – 2021</span>
                                 </p>
 
@@ -117,11 +117,11 @@ const About = () => {
 
                         {/* ITEM 3 */}
                         <div className="relative">
-                            <div className="absolute -left-[10px] sm:-left-[14px] md:-left-[16px] lg:-left-[18px] top-2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-[#1e8acb] rounded-full"></div>
+                            <div className="absolute -left-2.5 sm:-left-3.5 md:-left-4 lg:-left-4.5 top-2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-[#1e8acb] rounded-full"></div>
 
                             <div className="bg-white p-4 sm:p-5 md:p-6 rounded-xl shadow border border-blue-100 hover:shadow-lg hover:border-[#1e8acb] transition-all duration-300">
                                 <p className="text-gray-500 flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2 text-xs sm:text-sm">
-                                    <FaCalendarAlt className="flex-shrink-0" />
+                                    <FaCalendarAlt className="shrink-0" />
                                     <span>May 2012 – May 2017</span>
                                 </p>
 

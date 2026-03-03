@@ -22,7 +22,7 @@ import { motion } from 'framer-motion';
 // ScrollDivider Component
 const ScrollDivider = () => {
     return (
-        <div className="flex justify-center py-[12px] px-0">
+        <div className="flex justify-center py-3 px-0">
             <motion.div
                 animate={{
                     y: [0, 10, 0]
@@ -100,17 +100,7 @@ const services = [
 
         ]
     },
-    {
-        icon: <FaClipboardCheck />,
-        title: "Performance Tracking & Reporting",
-        desc: "Set up dashboards, track KPIs, and deliver clear monthly reports with actionable recommendations to continuously improve your digital marketing ROI",
-        tools: [
-            { name: "Google Analytics", image: "/tools/google.png" },
-            { name: "Google Search Console", image: "/tools/googlesearchconsole.png" },
-            { name: "Microsoft 365", image: "/tools/microsoft.png" },
-        ]
-    },
-    {
+       {
         icon: <FaClipboardCheck />,
         title: "Tools & Technologies",
         desc: "Leveraging cutting-edge AI and creative platforms to deliver exceptional results",
@@ -123,6 +113,17 @@ const services = [
             { name: "Adobe Creative Cloud", image: "/tools/adobe.png" },
         ]
     },
+    {
+        icon: <FaClipboardCheck />,
+        title: "Performance Tracking & Reporting",
+        desc: "Set up dashboards, track KPIs, and deliver clear monthly reports with actionable recommendations to continuously improve your digital marketing ROI",
+        tools: [
+            { name: "Google Analytics", image: "/tools/google.png" },
+            { name: "Google Search Console", image: "/tools/googlesearchconsole.png" },
+            { name: "Microsoft 365", image: "/tools/microsoft.png" },
+        ]
+    },
+ 
 ];
 
 const portfolioData = {
@@ -219,10 +220,10 @@ const ServicesPortfolio = () => {
     };
 
     return (
-        <div className="bg-[#ced5da] min-h-screen py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 overflow-hidden">
+        <section className="bg-[#ced5da] min-h-screen py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 overflow-hidden">
 
             {/* ===== SERVICES SECTION ===== */}
-            <div className="max-w-6xl mx-auto text-center">
+            <div id="services" className="max-w-6xl mx-auto text-center">
                 <p className="text-[#1e8acb] font-semibold text-sm sm:text-base">
                     WHAT I OFFER
                 </p>
@@ -264,7 +265,7 @@ const ServicesPortfolio = () => {
 
 
             {/* ===== PORTFOLIO SECTION ===== */}
-            <div className="bg-gray-50 py-8 sm:py-12 md:py-16 rounded-2xl sm:rounded-3xl">
+            <div id="portfolio" className="bg-gray-50 py-8 sm:py-12 md:py-16 rounded-2xl sm:rounded-3xl">
                 <div className="max-w-5xl mx-auto text-center px-4 sm:px-6">
                     <p className="text-[#1e8acb] font-semibold text-sm sm:text-base">
                         MY PORTFOLIO
@@ -289,7 +290,7 @@ const ServicesPortfolio = () => {
                                     setShowProjectImages(false);
                                     setCurrentImageIndex(0);
                                 }}
-                                className={`px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1 sm:gap-2 transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
+                                className={`px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1 sm:gap-2 transition-all duration-300 whitespace-nowrap shrink-0 ${
                                     activeTab === key
                                         ? "bg-[#1e8acb] text-white shadow-lg"
                                         : "bg-white border border-gray-200 text-gray-600 hover:border-blue-300"
@@ -437,7 +438,7 @@ const ServicesPortfolio = () => {
                                             key={index}
                                             className="text-xs sm:text-sm text-gray-700 flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-gray-50 border border-blue-100 rounded-lg hover:bg-gray-100 hover:shadow-md transition-all duration-300"
                                         >
-                                            <span className="text-[#1e8acb] font-bold text-sm sm:text-base mt-0.5 flex-shrink-0">✓</span>
+                                            <span className="text-[#1e8acb] font-bold text-sm sm:text-base mt-0.5 shrink-0">✓</span>
                                             <span className="flex-1">{item}</span>
                                         </li>
                                     ))}
@@ -454,7 +455,7 @@ const ServicesPortfolio = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
@@ -479,13 +480,13 @@ const ServiceCard = ({ item }) => (
                 {item.tools.map((tool, toolIndex) => (
                     <span
                         key={toolIndex}
-                        className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-700 px-2 sm:px-3 py-2 sm:py-3 rounded-full border border-gray-200 hover:border-[#1e8acb] hover:bg-blue-50 transition-colors duration-200"
+                        className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-700 px-1 sm:px-2 py-1 sm:py-2 rounded-full border border-gray-200 hover:border-[#1e8acb] hover:bg-blue-50 transition-colors duration-200"
                         title={tool.name}
                     >
                         <img
                             src={tool.image}
                             alt={tool.name}
-                            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 object-contain"
+                            className="w-3 h-3 sm:w-5 sm:h-5 md:w-6 md:h-6 object-contain"
                             onError={(e) => {
                                 e.target.onerror = null;
                                 e.target.src = "/images/tools/fallback.png";

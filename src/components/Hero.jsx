@@ -6,7 +6,7 @@ import { Sparkles, Target, TrendingUp } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="min-h-screen bg-gradient-to-r from-[#e1f2fd] to-gray-200 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-35 py-4 sm:py-6">
+        <section id="home" className="min-h-screen bg-linear-to-r from-[#e1f2fd] to-gray-200 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-35 py-4 sm:py-6">
 
             {/* HERO CONTENT */}
             <div className="grid md:grid-cols-2 items-center mt-8 sm:mt-12 md:mt-16 gap-8 md:gap-10">
